@@ -13,12 +13,14 @@ public class AuthUser extends User {
 
 	private static final long serialVersionUID = 1L;
 	
-	private String fullName;
+	private Long codUsuario;
+	private String nomeCompleto;
 	
 	public AuthUser(Usuario usuario) {
 		super(usuario.getEmail(), usuario.getSenha(), Collections.emptyList());
 		
-		this.fullName = usuario.getNome();
+		this.codUsuario = usuario.getCodigo();
+		this.nomeCompleto = usuario.getNome();
 	}
 	
 }
