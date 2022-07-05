@@ -1,4 +1,4 @@
-package com.algaworks.algafood.auth;
+package com.algaworks.algafood.auth.core;
 
 import java.security.KeyPair;
 import java.util.Arrays;
@@ -46,10 +46,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 			.secret(passwordEncoder.encode("web123"))
 			.authorizedGrantTypes("password", "refresh_token")
 			.scopes("write", "read")
-//			.accessTokenValiditySeconds(6 * 60 * 60) // 6 horas
-//			.refreshTokenValiditySeconds(60 * 24 * 60 * 60) // 60 dias
-			.accessTokenValiditySeconds(10)
-			.refreshTokenValiditySeconds(60 * 24 * 60 * 60)
+			.accessTokenValiditySeconds(6 * 60 * 60) // 6 horas
+			.refreshTokenValiditySeconds(60 * 24 * 60 * 60) // 60 dias
 		.and()	
 			.withClient("food-analytics")
 			.secret(passwordEncoder.encode(""))
